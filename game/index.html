@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clustered Biome Isometric Map Viewer</title>
+    <style>
+        body {
+            background-color: #1e2328;
+            color: #ffffff;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        canvas {
+            background-color: #2a3038;
+            border: 2px solid #444;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>Clustered Multi-Biome Isometric Map</h1>
+    <canvas id="mapCanvas" width="800" height="500"></canvas>
+
+    <script>
+        const canvas = document.getElementById("mapCanvas");
+        const ctx = canvas.getContext("2d");
+
+        const TILE_WIDTH = 64;
+        const TILE_HEIGHT = 128;
+        const DIAMOND_HEIGHT = 32;
+        const HALF_WIDTH = TILE_WIDTH / 2;
+        const HALF_DIAMOND = DIAMOND_HEIGHT / 2;
+        const originX = canvas.width / 2;
+        const originY = 100;
+
+        // Subfolders where tiles reside
+        const SUBFOLDERS = ["terrain", "roads", "water", "special"];
+        const imageCache = {};
+
+        fetch("map_data.json")
+            .then(res => res.json())
+            .then(mapData => loadAndRender(mapData))
+            .catch(err => console.error("Error loading map_data.json:", err));
+
+        function loadAndRender(mapData) {
+            // Collect all unique variant names from the map (e.g. "ForestSet_0", "RiverBend_1")
+            const uniqueTiles = new Set();
+            mapData.tiles.forEach(row => {
+                row.forEach(tileName => uniqueTiles.add(tileName));
+            });
+
+            let loaded = 0;
+            const total = uniqueTiles.size;
+
+            uniqueTiles.forEach(tileName => {
+                const img = new Image();
+                
+                // Try finding the image across possible subfolders
+                let subfolderIndex = 0;
+                
+                function tryNextFolder() {
+                    if (subfolderIndex < SUBFOLDERS.length) {
+                        const folder = SUBFOLDERS[subfolderIndex++];
+                        img.src = `assets/tiles/${folder}/${tileName}.png`;
+                    }
+                }
+
+                img.onload = () => {
+                    imageCache[tileName] = img;
+                    loaded++;
+                    if (loaded === total) renderMap(mapData);
+                };
+
+                img.onerror = () => {
+                    // If not found in current folder, try the next subfolder
+                    if (subfolderIndex < SUBFOLDERS.length) {
+                        tryNextFolder();
+                    } else {
+                        console.warn(`Could not find asset: ${tileName}.png`);
+                        loaded++;
+                        if (loaded === total) renderMap(mapData);
+                    }
+                };
+
+                tryNextFolder();
+            });
+        }
+
+        function renderMap(mapData) {
+            const grid = mapData.tiles;
+
+            for (let gridY = 0; gridY < mapData.height; gridY++) {
+                for (let gridX = 0; gridX < mapData.width; gridX++) {
+                    const screenX = originX + (gridX - gridY) * HALF_WIDTH;
+                    const screenY = originY + (gridX + gridY) * HALF_DIAMOND;
+
+                    const tileName = grid[gridY][gridX];
+                    const tileImg = imageCache[tileName];
+
+                    if (tileImg) {
+                        const drawX = screenX - HALF_WIDTH;
+                        const drawY = screenY - (TILE_HEIGHT - DIAMOND_HEIGHT);
+                        ctx.drawImage(tileImg, drawX, drawY);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

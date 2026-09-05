@@ -1,0 +1,115 @@
+# New Map Persistence Architecture
+┌─────────────────────────┐               ┌──────────────────────────────┐
+│     PYTHON BACKEND      │               │      BROWSER FRONTEND        │
+│                         │               │                              │
+│  FastAPI / Flask Server │  JSON / WS    │  HTML5 Canvas / Phaser.js    │
+│  - Generates Maps       │ ────────────> │  - Loads tile assets         │
+│  - Handles Chat Engine  │ <───────────  │  - Renders isometric math    │
+│  - Saves to Database    │               │  - Displays side chat UI     │
+└────────────┬────────────┘               └──────────────────────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│     DATABASE / DISK     │
+│  JSON / SQLite          │
+│  - Stores grid array    │
+│  - Stores chat history  │
+└─────────────────────────┘
+
+## DB Options
+Prototyping use Json File
+Growing to scale use SQLite (or something similar)
+
+## Real-time Chat Events
+1. Client laods page (HTTP request to Python: GET /api/map)
+2. Python reads the Json or SQLite and sends the array to the map
+3. Javascript receives the Json array and draws the images on html using the isometric coordinate math from pygame_map
+4. WebSocket connection to allow typed chat messages or modifies a tile, the server immediately broadcasts that change to all connected browsers
+
+
+# Original Game Look (pre-Lay Off)
+
+main.py
+│
+├── create_character()
+│      │
+│      ▼
+│   character.py
+│      ├── Character(name)
+│      ├── generate_attributes()
+│      ├── calculate_derived_stats()
+│      ├── add_base_equipment()
+│      └── display_character_sheet()
+│
+├── GameWorld(width=50, height=50)
+│      │
+│      ▼
+│   gameworld.py
+│      ├── creates DiceBag
+│      └── creates TileMap
+│
+├── world.generate_world()
+│      │
+│      ▼
+│   TileMap.generate()
+│      │
+│      ├── Roll d66
+│      │      │
+│      │      ▼
+│      │   tiledefinitions.py
+│      │      └── find TileDefinition for roll
+│      │
+│      ├── create Tile
+│      │      ├── Terrain
+│      │      ├── Borders
+│      │      ├── Corners
+│      │      ├── Features
+│      │      └── RiverSegments
+│      │
+│      ├── repeat using serpentine generation
+│      │      ┌──────────────►
+│      │      ◄──────────────┘
+│      │
+│      ├── process roads
+│      │      ├── road requires matching borders
+│      │      ├── no roads through WATER
+│      │      └── remove road networks <= 2 segments
+│      │
+│      └── generate rivers
+│             │
+│             ├── find MOUNTAIN tiles
+│             ├── find river corner
+│             ├── begin RiverSegment
+│             ├── follow river/basin corners
+│             ├── favor direction toward WATER
+│             └── eventually terminate at ocean
+│
+├── choose_starting_location()
+│      │
+│      ├── Wilderness
+│      ├── Home
+│      └── Random
+│
+├── world.place_character()
+│      └── player.current_tile = Tile
+│
+└── run_map_viewer(world, player)
+       │
+       ▼
+   pygame_map.py
+       │
+       ├── EVENT LOOP
+       │      ├── keyboard movement
+       │      ├── command input
+       │      ├── mouse input (eventually)
+       │      └── quit
+       │
+       └── DRAW LOOP
+              ├── draw terrain
+              ├── draw coast
+              ├── draw valid roads
+              ├── draw RiverSegments
+              ├── draw basins
+              ├── draw settlements/features
+              ├── draw player
+              └── draw command/UI panel

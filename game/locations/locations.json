@@ -1,0 +1,18 @@
+{
+    "settlement": {
+        "item_slots": 5,
+        "items": []
+    },
+    "wilderness": {
+        "item_slots": 3,
+        "items": []
+    },
+    "cave": {
+        "item_slots": 2,
+        "items": []
+    },
+    "ruins": {
+        "item_slots": 2,
+        "items": []
+    }
+}

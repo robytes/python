@@ -1,0 +1,42 @@
+{
+    "sword": {
+        "rarity": "rare",
+        "locations": ["ruins", "settlement"],
+        "tags": ["weapon", "melee"]
+    },
+    "shield": {
+        "rarity": "uncommon",
+        "locations": ["ruins", "settlement"],
+        "tags": ["armor", "defensive"]
+    },
+    "rations": {
+        "rarity": "common",
+        "locations": ["wilderness", "settlement"],
+        "tags": ["equipment", "food"]
+    },
+    "torch": {
+        "rarity": "common",
+        "locations": ["ruins", "cave", "settlement"],
+        "tags": ["equipment", "light"]
+    },
+    "rope": {
+        "rarity": "common",
+        "locations": ["wilderness", "cave", "settlement"],
+        "tags": ["equipment"]
+    },
+    "waterskin": {
+        "rarity": "common",
+        "locations": ["wilderness", "settlement"],
+        "tags": ["equipment", "water"]
+    },
+    "dagger": {
+        "rarity": "common",
+        "locations": ["wilderness", "settlement"],
+        "tags": ["weapon", "melee"]
+    },
+    "shortbow": {
+        "rarity": "common",
+        "locations": ["wilderness", "cave"],
+        "tags": ["weapon", "ranged"]
+    }
+}
