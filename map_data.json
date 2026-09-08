@@ -1,0 +1,41 @@
+{
+    "width": 5,
+    "height": 5,
+    "tiles": [
+        [
+            "base",
+            "forest",
+            "forest",
+            "base",
+            "forest"
+        ],
+        [
+            "forest",
+            "base",
+            "base",
+            "base",
+            "forest"
+        ],
+        [
+            "forest",
+            "base",
+            "base",
+            "forest",
+            "base"
+        ],
+        [
+            "base",
+            "base",
+            "base",
+            "base",
+            "base"
+        ],
+        [
+            "base",
+            "base",
+            "base",
+            "base",
+            "base"
+        ]
+    ]
+}
