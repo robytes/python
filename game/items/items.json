@@ -1,42 +1,182 @@
 {
     "sword": {
-        "rarity": "rare",
+        "rarity": "uncommon",
         "locations": ["ruins", "settlement"],
-        "tags": ["weapon", "melee"]
+        "tags": ["weapon", "melee"],
+        "damage_value": 8,
+        "gp_value": 15,
+        "armor_value": 0,
+        "uses": null
     },
     "shield": {
         "rarity": "uncommon",
         "locations": ["ruins", "settlement"],
-        "tags": ["armor", "defensive"]
+        "tags": ["armor", "defensive"],
+        "damage_value": 0,
+        "gp_value": 10,
+        "armor_value": 2,
+        "uses": null
     },
     "rations": {
         "rarity": "common",
         "locations": ["wilderness", "settlement"],
-        "tags": ["equipment", "food"]
+        "tags": ["equipment", "food"],
+        "damage_value": 0,
+        "gp_value": 1,
+        "armor_value": 0,
+        "uses": 1
     },
     "torch": {
         "rarity": "common",
         "locations": ["ruins", "cave", "settlement"],
-        "tags": ["equipment", "light"]
+        "tags": ["equipment", "light"],
+        "damage_value": 1,
+        "gp_value": 1,
+        "armor_value": 0,
+        "uses": 1
     },
     "rope": {
         "rarity": "common",
         "locations": ["wilderness", "cave", "settlement"],
-        "tags": ["equipment"]
+        "tags": ["equipment"],
+        "damage_value": 0,
+        "gp_value": 2,
+        "armor_value": 0,
+        "uses": null
     },
     "waterskin": {
         "rarity": "common",
         "locations": ["wilderness", "settlement"],
-        "tags": ["equipment", "water"]
+        "tags": ["equipment", "water"],
+        "damage_value": 0,
+        "gp_value": 1,
+        "armor_value": 0,
+        "uses": 4
     },
     "dagger": {
         "rarity": "common",
         "locations": ["wilderness", "settlement"],
-        "tags": ["weapon", "melee"]
+        "tags": ["weapon", "melee"],
+        "damage_value": 4,
+        "gp_value": 2,
+        "armor_value": 0,
+        "uses": null
     },
     "shortbow": {
-        "rarity": "common",
+        "rarity": "uncommon",
         "locations": ["wilderness", "cave"],
-        "tags": ["weapon", "ranged"]
+        "tags": ["weapon", "ranged"],
+        "damage_value": 6,
+        "gp_value": 25,
+        "armor_value": 0,
+        "uses": null
+    },
+    "longbow": {
+        "rarity": "rare",
+        "locations": ["wilderness", "cave"],
+        "tags": ["weapon", "ranged"],
+        "damage_value": 8,
+        "gp_value": 50,
+        "armor_value": 0,
+        "uses": null
+    },
+    "healing_potion": {
+        "rarity": "rare",
+        "locations": ["ruins", "cave"],
+        "tags": ["consumable", "healing"],
+        "damage_value": 0,
+        "gp_value": 50,
+        "armor_value": 0,
+        "uses": 1
+    },
+    "magic_scroll": {
+        "rarity": "very rare",
+        "locations": ["ruins"],
+        "tags": ["consumable", "magic"],
+        "damage_value": 12,
+        "gp_value": 150,
+        "armor_value": 0,
+        "uses": 1
+    },
+    "magic_wand": {
+        "rarity": "very rare",
+        "locations": ["ruins"],
+        "tags": ["weapon", "magic"],
+        "damage_value": 10,
+        "gp_value": 250,
+        "armor_value": 0,
+        "uses": 10
+    },
+    "magic_ring": {
+        "rarity": "exceptional",
+        "locations": ["ruins"],
+        "tags": ["quest", "artifact", "magic"],
+        "damage_value": 0,
+        "gp_value": 500,
+        "armor_value": 1,
+        "uses": null
+    },
+    "magic_amulet": {
+        "rarity": "exceptional",
+        "locations": ["ruins"],
+        "tags": ["quest", "artifact", "magic"],
+        "damage_value": 0,
+        "gp_value": 500,
+        "armor_value": 1,
+        "uses": null
+    },
+    "gold_coins": {
+        "rarity": "uncommon",
+        "locations": ["wilderness", "settlement", "ruins", "cave"],
+        "tags": ["currency"],
+        "damage_value": 0,
+        "gp_value": 1,
+        "armor_value": 0,
+        "uses": null
+    },
+    "silver_coins": {
+        "rarity": "uncommon",
+        "locations": ["wilderness", "settlement", "ruins", "cave"],
+        "tags": ["currency"],
+        "damage_value": 0,
+        "gp_value": 0.1,
+        "armor_value": 0,
+        "uses": null
+    },
+    "copper_coins": {
+        "rarity": "common",
+        "locations": ["wilderness", "settlement", "ruins", "cave"],
+        "tags": ["currency"],
+        "damage_value": 0,
+        "gp_value": 0.01,
+        "armor_value": 0,
+        "uses": null
+    },
+    "ruby": {
+        "rarity": "rare",
+        "locations": ["ruins", "cave"],
+        "tags": ["currency", "gem"],
+        "damage_value": 0,
+        "gp_value": 100,
+        "armor_value": 0,
+        "uses": null
+    },
+    "sapphire": {
+        "rarity": "rare",
+        "locations": ["ruins", "cave"],
+        "tags": ["currency", "gem"],
+        "damage_value": 0,
+        "gp_value": 100,
+        "armor_value": 0,
+        "uses": null
+    },
+    "diamond": {
+        "rarity": "very rare",
+        "locations": ["ruins", "cave"],
+        "tags": ["currency", "gem"],
+        "damage_value": 0,
+        "gp_value": 500,
+        "armor_value": 0,
+        "uses": null
     }
 }

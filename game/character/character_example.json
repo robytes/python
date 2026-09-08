@@ -1,0 +1,40 @@
+{
+    "name": "Mara Vey",
+
+    "attributes": {
+        "fitness": 60,
+        "intellect": 65,
+        "influence": 55,
+        "spirit": 60
+    },
+
+    "derived_stats": {
+        "presence": 58,
+        "resolve": 63,
+        "luck": 60
+    },
+
+    "resources": {
+    "hp": {
+        "current": 30,
+        "max": 30
+    },
+    "mp": {
+        "current": 25,
+        "max": 25
+    },
+    "composure": {
+        "current": 30,
+        "max": 30
+    }
+    },
+
+    "reputation": {},
+
+    "inventory": [],
+
+    "equipment": {
+        "weapon": null,
+        "armor": null
+    }
+}

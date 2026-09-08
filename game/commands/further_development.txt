@@ -1,0 +1,48 @@
+The remaining complexity ideas were:
+
+1. Command aliases — map alternate commands to a canonical command:
+
+"i"      → "inventory"
+"inv"    → "inventory"
+"get"    → "take"
+"pickup" → "take"
+
+This is primarily a dictionary lookup exercise.
+
+2. Structured errors instead of printing/returning None — rather than having the parser print errors itself, return information the game can act on:
+
+unsupported command
+missing target
+unexpected target
+
+This starts separating the parser from the eventual command handler/UI.
+
+3. Command-specific target validation — not all targets mean the same thing:
+
+go north          → direction
+take iron sword   → item
+attack old goblin → creature
+
+The parser could attach information describing what kind of target the handler needs to resolve.
+
+4. Multiple arguments / more structured commands — eventually support something beyond command + target:
+
+give sword to guard
+use key on door
+attack goblin with sword
+
+This gets substantially more interesting because simple command_split[1:] is no longer sufficient. You'd have to recognize keywords such as to, on, or with and slice the input around them.
+
+5. Separate parsing from execution — once parsing is solid, introduce command_handler.py:
+
+raw input
+   ↓
+parse_command()
+   ↓
+structured command
+   ↓
+handle_command()
+   ↓
+game state changes
+
+So the parser understands "take rusty sword", while the handler determines whether a rusty sword actually exists at the current location.

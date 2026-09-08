@@ -1,0 +1,29 @@
+CHARACTER
+│
+├── Immutable Base Attributes (roll 3d6, rolling 1s until no 1s, and multiply by 5)
+│   ├── Fitness
+│   ├── Intellect
+│   ├── Influence # represents what they can deliberately accomplish socially—persuasion, deception, intimidation, negotiation, etc.
+│   └── Spirit
+│
+├── Derived Stats
+│   ├── Presence # represents the immediate impression a character makes: appearance, bearing, confidence, magnetism
+│   │    └── Fitness + Influence
+│   ├── Resolve # represents resistance to psychological stress.
+│   │    └── Spirit + Intellect
+│   └── Luck
+│
+├── Mutable Resources
+│   ├── HP
+│   ├── MP
+│   └── Composure # resource that can actually be depleted by frightening or psychologically damaging experiences
+│
+├── Reputation
+│   └── Established during character creation,
+│       then modified by events in the world, Character creation establishes it, and actions during the game modify it. Eventually it could vary by faction, settlement, organization, NPC, etc.
+│
+├── Inventory
+│
+└── Equipment
+    ├── Weapon
+    └── Armor
