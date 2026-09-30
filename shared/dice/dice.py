@@ -22,6 +22,9 @@ def roll(dice, modifier=0):
 
 final_result = roll("d6", -2)
 
+# Using a below pattern to build encounter tables.
+# Exapnding out from just counting the frequency of results, to adding specific encounters within those ranges. 
+# This will allow for more specific encounters to be rolled, and for the frequency of those encounters to be adjusted as needed.
 # def test_d100_frequency(number_of_rolls):
 #     rolls = 0
 #     result_frequency = {
