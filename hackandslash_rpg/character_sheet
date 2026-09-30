@@ -1,0 +1,30 @@
+CHARACTER — persistent state
+│
+├── name / identity
+├── class
+│   ├── name
+│   └── level
+├── ability_scores
+├── hit_points
+├── combat_modifiers
+├── combat_adjustments
+├── equipped_items
+└── inventory
+
+              ↓ calculations ↓
+
+DERIVED / CONTEXTUAL VALUES
+│
+├── effective attack modifier
+├── effective damage modifier
+├── effective AC
+├── initiative
+├── encumbrance
+└── eventually saves, movement, etc.
+
+              ↓
+
+OUTPUT
+├── combat resolution
+├── combat log
+└── character sheet

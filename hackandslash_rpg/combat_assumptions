@@ -1,0 +1,27 @@
+Rules basis: Rules Cyclopedia-inspired
+
+Armor Class:
+- Ascending AC
+
+Attack:
+- d20 + attack bonus >= AC
+
+Damage:
+- Weapon damage roll + applicable modifier
+
+Initiative:
+- Keep simple initially
+- d6 per side or individual initiative
+
+Hit Points:
+- Fighter uses d8
+- Monster uses its normal HD concept
+
+Death:
+- 0 HP = defeated
+
+First playable classes:
+- Fighter only
+
+First monster:
+- Goblin
