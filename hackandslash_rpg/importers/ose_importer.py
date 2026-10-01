@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+import unicodedata
 
 OSE_STAT_MARKERS = [
         "AC",
@@ -178,7 +179,49 @@ def validate_ose_monster_stats(monster_records):
         validated_monster_records.append(validated_monster)
     return validated_monster_records
 
-# def normalize_armor_class(ose_ac):
+def normalize_armor_class(ose_ac):
+    armor_class = {
+        "base_ac": 10,
+        "secondary_ac": None,
+    }
+    ac_string_begin = ose_ac.find("[")
+    ac_string_end = ose_ac.find("]")
+    armor_class["base_ac"] = int(ose_ac[ac_string_begin + 1:ac_string_end])
+    if ose_ac[ac_string_end:].find("[") != -1:
+        secondary_ac_string_begin = ose_ac[ac_string_end:].find("[")
+        secondary_ac_string_end = ose_ac[ac_string_end:].find("]")
+        armor_class["secondary_ac"] = int(ose_ac[ac_string_end + secondary_ac_string_begin + 1:ac_string_end + secondary_ac_string_end])
+
+    return armor_class
+
+def normalize_hit_dice(ose_hd):
+    hit_dice = {
+        "number_of_dice": 0,
+        "die": "d8",
+        "hp_modifier": 0,
+        "special": False
+    }
+    clean_hd = ose_hd.replace("*", "")
+    first_parenthesis = clean_hd.find("(")
+    if "+" in clean_hd:        
+        modifier = clean_hd.find("+")
+        hit_dice["number_of_dice"] = int(clean_hd[:modifier])
+        hit_dice["hp_modifier"] = int(clean_hd[modifier + 1:first_parenthesis])
+    elif "-" in clean_hd:
+        modifier = clean_hd.find("-")
+        hit_dice["number_of_dice"] = int(clean_hd[:modifier])
+        hit_dice["hp_modifier"] = -int(clean_hd[modifier + 1:first_parenthesis])
+    elif "½" in clean_hd:
+        hit_dice["number_of_dice"] = unicodedata.numeric("½")
+    elif "to" in clean_hd:
+        to_begin = clean_hd.find("to")
+        hit_dice["number_of_dice"] = int(clean_hd[:to_begin])
+        hit_dice["special"] = True
+        # These monsters' hd are expressed ranges. Will have to build variants for each.
+    else:
+        hit_dice["number_of_dice"] = int(clean_hd[:first_parenthesis])
+
+    return hit_dice
 
 url = "https://oldschoolessentials.necroticgnome.com/rules/doku.php?id=monsters:monster_list"
 response = get_ose_page(url)
@@ -192,13 +235,20 @@ test_monster_links.append(monster_links[21])
 test_monster_links.append(monster_links[32])
 test_monster_links.append(monster_links[43])
 
-monster_records = build_ose_monster_records(test_monster_links)
+monster_records = build_ose_monster_records(monster_links)
 monster_pages = get_ose_monster_page(monster_records)
 monster_stats = get_ose_monster_stats_string(monster_pages, monster_records)
 # for monster in monster_stats:
 #     print(monster["name"], "=", monster["source_group"])
 monster_stats_parsed = parse_ose_monster_stats(monster_stats)
 validation_results = validate_ose_monster_stats(monster_stats_parsed)
+for monster in monster_stats_parsed:
+    if "to" in monster["stats"]["formatted"]["HD"]:
+        print(monster["name"], "=", monster["stats"]["formatted"]["HD"])
+for monster in monster_stats_parsed:
+    monster_armor_class = normalize_armor_class(monster["stats"]["formatted"]["AC"])
+    print(monster["name"], ":", monster_armor_class)
+monster_armor_class = normalize_armor_class()
 print("done")
 
 
