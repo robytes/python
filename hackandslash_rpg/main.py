@@ -42,6 +42,12 @@ character = {
             "defense_modifier": {},
             "initiative_modifier": {}
         },
+        "hit_dice": {
+            "number_of_dice": 1,
+            "die": "d8",
+            "hp_modifier": 0,
+            "special": False
+        },
         "hit_points": {
             "hp_max": 8,
             "hp_current": 8
@@ -140,7 +146,12 @@ enemies = {
             "base_ac": 13, 
             "shield_bonus": 0
         },
-        "hit_dice": "d8",
+        "hit_dice": {
+            "number_of_dice": 1,
+            "die": "d8",
+            "hp_modifier": 0,
+            "special": False
+        },
         "hit_points": {
             "hp_max": 6,
             "hp_current": 6
@@ -188,7 +199,12 @@ enemies = {
             "base_ac": 14,
             "shield_bonus": 0
         },
-        "hit_dice": "d8",
+        "hit_dice": {
+            "number_of_dice": 4,
+            "die": "d8",
+            "hp_modifier": 1,
+            "special": False
+        },
         "hit_points": {
             "hp_max": 8,
             "hp_current": 8
