@@ -1,0 +1,51 @@
+{
+    "leather_armor": {
+        "category": "armor",
+        "armor_class": 12,
+        "cost_gp": 20,
+        "encumbrance_cn": 200,
+        "tags": ["armor", "leather", "light"]
+    },
+    "scale_mail": {
+        "category": "armor",
+        "armor_class": 13,
+        "cost_gp": 30,
+        "encumbrance_cn": 300,
+        "tags": ["armor", "metal"]
+    },
+    "chain_mail": {
+        "category": "armor",
+        "armor_class": 14,
+        "cost_gp": 40,
+        "encumbrance_cn": 400,
+        "tags": ["armor", "metal"]
+    },
+    "banded_mail": {
+        "category": "armor",
+        "armor_class": 15,
+        "cost_gp": 50,
+        "encumbrance_cn": 450,
+        "tags": ["armor", "metal"]
+    },
+    "plate_mail": {
+        "category": "armor",
+        "armor_class": 16,
+        "cost_gp": 60,
+        "encumbrance_cn": 500,
+        "tags": ["armor", "metal", "heavy"]
+    },
+    "suit_armor": {
+        "category": "armor",
+        "armor_class": 17,
+        "cost_gp": 250,
+        "encumbrance_cn": 750,
+        "tags": ["armor", "metal", "heavy", "full_suit"]
+    },
+    "shield": {
+        "category": "shield",
+        "armor_class_modifier": 1,
+        "cost_gp": 10,
+        "encumbrance_cn": 100,
+        "tags": ["shield", "defensive"]
+    }
+}
