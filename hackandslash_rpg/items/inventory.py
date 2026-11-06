@@ -1,5 +1,6 @@
 # Add, remove, search, and count inventory items
 # Work with collections of items, such as adding a sword to a character's inventory or finding all wooden items they possess.
+from .registry import load_item_registry
 
 def count_items_by_tag(item_registry):
     tag_counts = {}
@@ -46,13 +47,34 @@ def find_top_three_tags(tag_counts):
 
     return top_three
 
-tag_counts = {
-    "weapon": 12,
-    "magic": 8,
-    "armor": 15,
-    "potion": 5,
-    "metal": 10
-}
+def calculate_total_encumbrance(inventory, item_registry):
+    total_encumbrance = 0
+    for item in inventory:
+        weight = item_registry[item]["encumbrance_cn"]
+        total_encumbrance += weight
+    return total_encumbrance
 
-print(find_most_common_tags(tag_counts))
-print(find_top_three_tags(tag_counts))
+def get_encumbrance_status(total_encumbrance):    
+    encumbrance_status = {
+        "category": "",
+        "movement_rate": 0
+    }
+    if total_encumbrance <= 400:
+        encumbrance_status["category"] = "unencumbered"
+        encumbrance_status["movement_rate"] = 120
+    elif total_encumbrance <= 800:
+        encumbrance_status["category"] = "light"
+        encumbrance_status["movement_rate"] = 90
+    elif total_encumbrance <= 1200:
+        encumbrance_status["category"] = "moderate"
+        encumbrance_status["movement_rate"] = 60
+    elif total_encumbrance <= 1600:
+        encumbrance_status["category"] = "heavy"
+        encumbrance_status["movement_rate"] = 30
+    elif total_encumbrance <= 2400:
+        encumbrance_status["category"] = "severe"
+        encumbrance_status["movement_rate"] = 15
+    else:
+        encumbrance_status["category"] = "immobile"
+        encumbrance_status["movement_rate"] = 0
+    return encumbrance_status
