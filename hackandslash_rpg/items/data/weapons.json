@@ -1,0 +1,37 @@
+{
+    "masterwork_longsword": {
+        "hit_modifier": 1,
+        "damage_modifier": 0,
+        "damage": "d8",
+        "two_handed": false,
+        "tags": ["weapon", "sword", "metal", "masterwork"]
+    },
+    "longsword": {
+        "hit_modifier": 0,
+        "damage_modifier": 0,
+        "damage": "d8",
+        "two_handed": false,
+        "tags": ["weapon", "sword", "metal"]
+    },
+    "shortsword": {
+        "hit_modifier": 0,
+        "damage_modifier": 0,
+        "damage": "d6",
+        "two_handed": false,
+        "tags": ["weapon", "sword", "metal"]
+    },
+    "staff": {
+        "hit_modifier": 0,
+        "damage_modifier": 0,
+        "damage": "d6",
+        "two_handed": true,
+        "tags": ["weapon", "staff", "wood", "melee"]
+    },
+    "club": {
+        "hit_modifier": 0,
+        "damage_modifier": 0,
+        "damage": "d4",
+        "two_handed": false,
+        "tags": ["weapon", "club", "wood", "melee"]
+    }
+}

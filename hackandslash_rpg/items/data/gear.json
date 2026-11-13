@@ -1,0 +1,282 @@
+{
+    "backpack": {
+        "category": "container",
+        "cost": 5,
+        "currency": "gp",
+        "encumbrance_cn": 20,
+        "capacity_cn": 400,
+        "tags": ["container", "storage", "travel"]
+    },
+    "belt": {
+        "category": "clothing",
+        "cost": 2,
+        "currency": "sp",
+        "encumbrance_cn": 5,
+        "tags": ["clothing", "wearable"]
+    },
+    "boots_plain": {
+        "category": "clothing",
+        "cost": 1,
+        "currency": "gp",
+        "encumbrance_cn": 10,
+        "tags": ["clothing", "footwear"]
+    },
+    "boots_riding": {
+        "category": "clothing",
+        "cost": 5,
+        "currency": "gp",
+        "encumbrance_cn": 15,
+        "tags": ["clothing", "footwear", "riding"]
+    },
+    "cloak_short": {
+        "category": "clothing",
+        "cost": 5,
+        "currency": "sp",
+        "encumbrance_cn": 10,
+        "tags": ["clothing", "cloak"]
+    },
+    "cloak_long": {
+        "category": "clothing",
+        "cost": 1,
+        "currency": "gp",
+        "encumbrance_cn": 15,
+        "tags": ["clothing", "cloak"]
+    },
+    "clothes_plain": {
+        "category": "clothing",
+        "cost": 5,
+        "currency": "sp",
+        "encumbrance_cn": 20,
+        "tags": ["clothing", "wearable"]
+    },
+    "clothes_middle_class": {
+        "category": "clothing",
+        "cost": 5,
+        "currency": "gp",
+        "encumbrance_cn": 20,
+        "tags": ["clothing", "wearable"]
+    },
+    "clothes_fine": {
+        "category": "clothing",
+        "cost": 20,
+        "currency": "gp",
+        "encumbrance_cn": 20,
+        "tags": ["clothing", "wearable", "fine"]
+    },
+    "clothes_extravagant": {
+        "category": "clothing",
+        "cost": 50,
+        "currency": "gp",
+        "minimum_cost": true,
+        "encumbrance_cn": 30,
+        "tags": ["clothing", "wearable", "luxury"]
+    },
+    "garlic": {
+        "category": "gear",
+        "cost": 5,
+        "currency": "gp",
+        "encumbrance_cn": 1,
+        "tags": ["herb", "organic"]
+    },
+    "grappling_hook": {
+        "category": "gear",
+        "cost": 25,
+        "currency": "gp",
+        "encumbrance_cn": 80,
+        "tags": ["metal", "climbing", "utility"]
+    },
+    "hammer": {
+        "category": "tool",
+        "cost": 2,
+        "currency": "gp",
+        "encumbrance_cn": 10,
+        "tags": ["tool", "utility"]
+    },
+    "hat": {
+        "category": "clothing",
+        "cost": 2,
+        "currency": "sp",
+        "encumbrance_cn": 3,
+        "tags": ["clothing", "headwear"]
+    },
+    "holy_symbol": {
+        "category": "religious",
+        "cost": 25,
+        "currency": "gp",
+        "encumbrance_cn": 1,
+        "tags": ["holy", "religious"]
+    },
+    "holy_water": {
+        "category": "consumable",
+        "cost": 25,
+        "currency": "gp",
+        "encumbrance_cn": 1,
+        "tags": ["holy", "consumable", "undead"]
+    },
+    "iron_spike": {
+        "category": "gear",
+        "cost": 1,
+        "currency": "sp",
+        "encumbrance_cn": 5,
+        "tags": ["metal", "climbing", "utility"]
+    },
+    "iron_spikes_12": {
+        "category": "gear",
+        "cost": 1,
+        "currency": "gp",
+        "encumbrance_cn": 60,
+        "quantity": 12,
+        "tags": ["metal", "climbing", "utility", "bundle"]
+    },
+    "lantern": {
+        "category": "gear",
+        "cost": 10,
+        "currency": "gp",
+        "encumbrance_cn": 30,
+        "tags": ["light_source", "oil", "utility"]
+    },
+    "mirror": {
+        "category": "gear",
+        "cost": 5,
+        "currency": "gp",
+        "encumbrance_cn": 5,
+        "tags": ["metal", "reflection", "utility"]
+    },
+    "oil_flask": {
+        "category": "consumable",
+        "cost": 2,
+        "currency": "gp",
+        "encumbrance_cn": 10,
+        "tags": ["oil", "fuel", "flammable", "consumable"]
+    },
+    "pole_10ft": {
+        "category": "gear",
+        "cost": 1,
+        "currency": "gp",
+        "encumbrance_cn": 100,
+        "tags": ["wood", "exploration", "utility"]
+    },
+    "belt_pouch": {
+        "category": "container",
+        "cost": 5,
+        "currency": "sp",
+        "encumbrance_cn": 2,
+        "capacity_cn": 50,
+        "tags": ["container", "storage"]
+    },
+    "quiver": {
+        "category": "container",
+        "cost": 1,
+        "currency": "gp",
+        "encumbrance_cn": 5,
+        "tags": ["container", "ammunition"]
+    },
+    "iron_rations": {
+        "category": "consumable",
+        "cost": 15,
+        "currency": "gp",
+        "encumbrance_cn": 70,
+        "duration_days": 7,
+        "tags": ["food", "rations", "preserved", "consumable"]
+    },
+    "standard_rations": {
+        "category": "consumable",
+        "cost": 5,
+        "currency": "gp",
+        "encumbrance_cn": 200,
+        "duration_days": 7,
+        "tags": ["food", "rations", "perishable", "consumable"]
+    },
+    "rope_50ft": {
+        "category": "gear",
+        "cost": 1,
+        "currency": "gp",
+        "encumbrance_cn": 50,
+        "length_ft": 50,
+        "tags": ["rope", "climbing", "utility"]
+    },
+    "sack_small": {
+        "category": "container",
+        "cost": 1,
+        "currency": "gp",
+        "encumbrance_cn": 1,
+        "capacity_cn": 200,
+        "tags": ["container", "storage"]
+    },
+    "sack_large": {
+        "category": "container",
+        "cost": 2,
+        "currency": "gp",
+        "encumbrance_cn": 5,
+        "capacity_cn": 600,
+        "tags": ["container", "storage"]
+    },
+    "shoes": {
+        "category": "clothing",
+        "cost": 5,
+        "currency": "sp",
+        "encumbrance_cn": 8,
+        "tags": ["clothing", "footwear"]
+    },
+    "stakes_and_mallet": {
+        "category": "gear",
+        "cost": 3,
+        "currency": "gp",
+        "encumbrance_cn": 10,
+        "quantity": 3,
+        "tags": ["wood", "utility", "vampire"]
+    },
+    "thieves_tools": {
+        "category": "tool",
+        "cost": 25,
+        "currency": "gp",
+        "encumbrance_cn": 10,
+        "tags": ["tool", "thievery", "lockpicking"]
+    },
+    "tinder_box": {
+        "category": "tool",
+        "cost": 3,
+        "currency": "gp",
+        "encumbrance_cn": 5,
+        "tags": ["tool", "fire_starting", "utility"]
+    },
+    "torch": {
+        "category": "consumable",
+        "cost": 2,
+        "currency": "sp",
+        "encumbrance_cn": 20,
+        "tags": ["light_source", "wood", "flammable", "consumable"]
+    },
+    "torches_6": {
+        "category": "gear",
+        "cost": 1,
+        "currency": "gp",
+        "encumbrance_cn": 120,
+        "quantity": 6,
+        "tags": ["light_source", "wood", "flammable", "bundle"]
+    },
+    "waterskin": {
+        "category": "container",
+        "cost": 1,
+        "currency": "gp",
+        "encumbrance_cn": 5,
+        "filled_encumbrance_cn": 30,
+        "capacity_quarts": 1,
+        "tags": ["container", "water", "travel"]
+    },
+    "wine": {
+        "category": "consumable",
+        "cost": 1,
+        "currency": "gp",
+        "encumbrance_cn": 30,
+        "quantity_quarts": 1,
+        "tags": ["drink", "consumable"]
+    },
+    "wolfsbane": {
+        "category": "gear",
+        "cost": 10,
+        "currency": "gp",
+        "encumbrance_cn": 1,
+        "tags": ["herb", "organic"]
+    }
+}

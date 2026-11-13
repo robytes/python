@@ -1,0 +1,45 @@
+{
+    "potion_of_healing": {
+        "category": "magic_item",
+        "subcategory": "potion",
+        "effect": "healing",
+        "healing": "1d6+1",
+        "consumable": true,
+        "tags": ["magic", "potion", "healing", "consumable"]
+    },
+    "potion_of_invisibility": {
+        "category": "magic_item",
+        "subcategory": "potion",
+        "effect": "invisibility",
+        "consumable": true,
+        "tags": ["magic", "potion", "invisibility", "consumable"]
+    },
+    "ring_of_protection_1": {
+        "category": "magic_item",
+        "subcategory": "ring",
+        "effect": "protection",
+        "armor_class_modifier": 1,
+        "saving_throw_modifier": 1,
+        "tags": ["magic", "ring", "protection", "wearable"]
+    },
+    "bag_of_holding": {
+        "category": "magic_item",
+        "subcategory": "container",
+        "effect": "extradimensional_storage",
+        "capacity_cn": 10000,
+        "tags": ["magic", "container", "storage"]
+    },
+    "boots_of_speed": {
+        "category": "magic_item",
+        "subcategory": "boots",
+        "effect": "increased_movement",
+        "tags": ["magic", "boots", "wearable", "movement"]
+    },
+    "wand_of_fireballs": {
+        "category": "magic_item",
+        "subcategory": "wand",
+        "effect": "fireball",
+        "charges": "3d10",
+        "tags": ["magic", "wand", "fire", "charged"]
+    }
+}
