@@ -32,3 +32,9 @@ class TestWeather(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    # def test_get_forecast(self):
+    #     forecast_url = "https://example.com/forecast"
+    #     headers = {"User-Agent": "WeatherPractice/1.0"}
+
+    #     with patch("weather.requests.get") as mock_get:
