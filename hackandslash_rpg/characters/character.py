@@ -53,4 +53,4 @@ class Character:
         return encumbrance_status["movement_rate"]
 
     def add_item(self, item_name, item_registry):
-        
+        pass
