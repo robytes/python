@@ -1,8 +1,10 @@
+
 import unittest
-from weather import display_forecast
 from io import StringIO
 from contextlib import redirect_stdout
-from unittest.mock import patch
+
+from weather import display_forecast
+
 
 class TestWeather(unittest.TestCase):
 
@@ -16,15 +18,20 @@ class TestWeather(unittest.TestCase):
             }
         ]
 
+        expected_output = "Tonight: 45°F - Mostly Cloudy\n"
+
         output = StringIO()
 
         with redirect_stdout(output):
             display_forecast(forecast_periods)
+
         actual_output = output.getvalue()
 
-        expected_output = "Tonight: 45°F - Mostly Cloudy\n"
-
         self.assertEqual(actual_output, expected_output)
+
+
+if __name__ == "__main__":
+    unittest.main()
 
     # def test_get_forecast(self):
     #     forecast_url = "https://example.com/forecast"
